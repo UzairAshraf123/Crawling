@@ -47,7 +47,7 @@ namespace Task1.Services
             fireFoxDriver.Navigate().GoToUrl(url);
             //fireFoxDriver.FindElement(By.Id(inputControl)).SendKeys(accountNo);
             List<Models.Model> list = new List<Models.Model>();
-            IEnumerable<string> links = fireFoxDriver.FindElements(By.XPath("//article/div/div/a")).Select(s => s.GetAttribute("href")).ToList();
+            IEnumerable<string> links = fireFoxDriver.FindElements(By.XPath("//li/article/div/div/div/a")).Select(s => s.GetAttribute("href")).ToList();
             foreach (var item in links)
             {
                 string previous = fireFoxDriver.Url;
